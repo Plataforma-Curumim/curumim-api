@@ -1,4 +1,4 @@
-@curumim_api_HostAddress = http://localhost:5180
+@curumim_api_HostAddress = http://localhost:5008
 
 GET {{curumim_api_HostAddress}}/weatherforecast/
 Accept: application/json
