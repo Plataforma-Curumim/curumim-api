@@ -1,4 +1,4 @@
-﻿using curumim_api.Adapters.Inbound.Http.Endpoint.RegisterBook;
+﻿using curumim_api.Adapters.Inbound.Http.Endpoint;
 
 namespace curumim_api.Infra.Configuration
 {
@@ -6,8 +6,7 @@ namespace curumim_api.Infra.Configuration
     {
         public static void UseEndpointConfiguration(this WebApplication app)
         {
-            var registerGroup = app.MapGroup("api/register");
-
+            var registerGroup = app.MapGroup("api/register/");
             registerGroup.AddEndpointRegisterBook();
         }
     }

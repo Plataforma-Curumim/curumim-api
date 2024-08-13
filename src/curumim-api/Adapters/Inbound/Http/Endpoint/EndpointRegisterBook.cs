@@ -1,26 +1,26 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
-using curumim_api.Adapters.Inbound.Http.Dto.RegisterBook;
-using curumim_api.Adapters.Inbound.Http.Dto.Filter;
 using curumim_api.Application.Core.Enums;
 using curumim_api.Adapters.Inbound.Http.Mappers.Shared;
 using curumim_api.Application.Ports.Inbound.UseCases;
 using curumim_api.Application.Core.DomainModels.Base;
+using curumim_api.Adapters.Inbound.Http.Models.RegisterBook;
+using curumim_api.Adapters.Inbound.Http.Models.Filter;
 
-namespace curumim_api.Adapters.Inbound.Http.Endpoint.RegisterBook
+namespace curumim_api.Adapters.Inbound.Http.Endpoint
 {
     public static class EndpointRegisterBook
     {
         public static void AddEndpointRegisterBook(this RouteGroupBuilder groupBuilder)
         {
-            groupBuilder.MapPost("api/registrar", RegisterBook)
+            groupBuilder.MapPost("/book", RegisterBook)
                         .WithTags("Register Book")
                         .AddEndpointFilter<ValidationFilter<RequestRegisterBook>>()
                         .Produces<ResponseRegisterBook>(201)
                         .Produces<BaseError>(422)
                         .Produces<BaseError>(500);
-                        //.RequireAuthorization();
+            //.RequireAuthorization();
 
         }
 

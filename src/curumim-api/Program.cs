@@ -5,15 +5,11 @@ using System.Validation;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerConfiguration();
 builder.Services.AddUseCaseConfiguration();
-//builder.Services.AddRepositoryConfiguration();
+builder.Services.AddRepositoryConfiguration();
 //builder.Services.AddJwtExtensions();
 //builder.Services.AddOpenTelemetry(builder.Configuration);
 builder.Services.AddFlatValidatorsFromAssembly(Assembly.GetExecutingAssembly());
@@ -29,10 +25,10 @@ app.UseStatusCodePages(async statusCodeContext
 
 app.UseEndpointConfiguration();
 app.UseRouting();
-app.UseAuthentication();
-app.UseAuthorization();
 app.UseHttpsRedirection();
 app.UseMiddleware<ExceptionMiddleware>();
 //app.UseMiddleware<TraceMiddleware>();
+//app.UseAuthentication();
+//app.UseAuthorization();
 
 app.Run();

@@ -1,9 +1,8 @@
-﻿namespace curumim_api.Adapters.Inbound.Http.Dto.RegisterBook
+﻿namespace curumim_api.Adapters.Inbound.Http.Models.RegisterBook
 {
     public record RequestRegisterBook
     {
         public string? rfidId { get; set; }
-        public string? bookId { get; set; }
         public string? isbn { get; set; }
         public string? title { get; set; }
         public string? subtitle { get; set; }

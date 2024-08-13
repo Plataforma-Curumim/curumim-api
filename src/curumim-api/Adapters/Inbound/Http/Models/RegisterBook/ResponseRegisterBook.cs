@@ -1,4 +1,4 @@
-﻿namespace curumim_api.Adapters.Inbound.Http.Dto.RegisterBook
+﻿namespace curumim_api.Adapters.Inbound.Http.Models.RegisterBook
 {
     public record ResponseRegisterBook
     {

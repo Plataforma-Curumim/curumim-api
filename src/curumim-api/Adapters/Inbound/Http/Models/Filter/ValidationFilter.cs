@@ -1,6 +1,6 @@
 ﻿using System.Validation;
 using curumim_api.Application.Core.DomainModels.Base;
-namespace curumim_api.Adapters.Inbound.Http.Dto.Filter
+namespace curumim_api.Adapters.Inbound.Http.Models.Filter
 {
     public class ValidationFilter<T>(IServiceProvider serviceProvider) : IEndpointFilter
     {

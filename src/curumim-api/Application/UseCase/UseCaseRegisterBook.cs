@@ -1,4 +1,4 @@
-﻿using curumim_api.Adapters.Inbound.Http.Dto.RegisterBook;
+﻿using curumim_api.Adapters.Inbound.Http.Models.RegisterBook;
 using curumim_api.Application.Core.DomainModels;
 using curumim_api.Application.Core.DomainModels.Base;
 using curumim_api.Application.Core.Enums;

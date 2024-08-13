@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "curumim-api": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DATABASE_ADDRESS": "",
+        "DATABASE_USERNAME": "",
+        "DATABASE_NAME": "",
+        "DATABASE_PASSWORD": ""
+      },
+      "applicationUrl": "https://localhost:54335;http://localhost:54336"
+    }
+  }
+}
