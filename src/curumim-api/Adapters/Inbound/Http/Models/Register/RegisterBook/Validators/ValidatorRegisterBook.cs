@@ -1,7 +1,7 @@
-﻿using curumim_api.Adapters.Inbound.Http.Models.RegisterBook;
+﻿using curumim_api.Adapters.Inbound.Http.Models.Register.RegisterBook;
 using System.Validation;
 
-namespace curumim_api.Adapters.Inbound.Http.Models.RegisterBook.Validators
+namespace curumim_api.Adapters.Inbound.Http.Models.Register.RegisterBook.Validators
 {
     public class ValidatorRegisterBook : FlatValidator<RequestRegisterBook>
     {

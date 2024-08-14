@@ -1,7 +1,10 @@
-﻿namespace curumim_api.Adapters.Inbound.Http.Models.RegisterBook
+﻿using curumim_api.Application.Core.DomainModels.Entities;
+
+namespace curumim_api.Adapters.Inbound.Http.Models.Register.RegisterBook
 {
     public record RequestRegisterBook
     {
+        public Root? root { get; set; }
         public string? rfidId { get; set; }
         public string? isbn { get; set; }
         public string? title { get; set; }

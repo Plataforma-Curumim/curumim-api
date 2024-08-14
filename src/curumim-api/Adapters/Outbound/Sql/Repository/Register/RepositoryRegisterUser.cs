@@ -1,15 +1,15 @@
 ﻿using curumim_api.Application.Core.DomainModels;
 using curumim_api.Application.Ports.Outbound.SQL.Connection;
-using curumim_api.Application.Ports.Outbound.SQL.Repository;
+using curumim_api.Application.Ports.Outbound.SQL.Repository.Register;
 using Dapper;
 using System.Data;
 
-namespace curumim_api.Adapters.Outbound.SQL.Repository
+namespace curumim_api.Adapters.Outbound.SQL.Repository.Register
 {
-    public class RepositoryRegisterBook (IConnectionSql connection) : IRepositoryRegisterBook
+    public class RepositoryRegisterUser(IConnectionSql connection) : IRepositoryRegisterUser
     {
         private readonly IConnectionSql _connection = connection;
-        
+
         public async Task<DomainModel> Register(DomainModel domainModel)
         {
             using (var connection = _connection.ConnectDatabase())

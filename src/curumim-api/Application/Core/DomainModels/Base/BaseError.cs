@@ -1,4 +1,6 @@
-﻿namespace curumim_api.Application.Core.DomainModels.Base
+﻿using curumim_api.Adapters.Outbound.SQL.Models;
+
+namespace curumim_api.Application.Core.DomainModels.Base
 {
     public class BaseError
     {
@@ -11,13 +13,11 @@
             this.codigo = codigo;
             this.mensagem = mensagem;
         }
-        /*
-        public BaseError(SpaError spaError)
+        public BaseError(SqlBaseError sqlError)
         {
             codigo = "400";
             mensagem = "Erro no banco de dados";
-            erros = [new Error("spa", [spaError.msgErro])];
+            erros = [new Error("Database", [sqlError.msgError])];
         }
-        */
     }
 }
