@@ -2,15 +2,28 @@
   "profiles": {
     "curumim-api": {
       "commandName": "Project",
-      "launchBrowser": false,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_ENVIRONMENT": "Arandu",
         "DATABASE_ADDRESS": "",
         "DATABASE_USERNAME": "",
         "DATABASE_NAME": "",
         "DATABASE_PASSWORD": ""
       },
       "applicationUrl": "https://localhost:54335;http://localhost:54336"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Arandu",
+        "DATABASE_ADDRESS": "",
+        "DATABASE_USERNAME": "",
+        "DATABASE_NAME": "",
+        "DATABASE_PASSWORD": ""
+      },
+      "publishAllPorts": true,
+      "useSSL": false
     }
   }
 }

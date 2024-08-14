@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using curumim_api.Application.Core.Enums;
 using curumim_api.Adapters.Inbound.Http.Mappers.Shared;
-using curumim_api.Application.Ports.Inbound.UseCases;
 using curumim_api.Application.Core.DomainModels.Base;
-using curumim_api.Adapters.Inbound.Http.Models.RegisterBook;
 using curumim_api.Adapters.Inbound.Http.Models.Filter;
+using curumim_api.Adapters.Inbound.Http.Models.Register.RegisterBook;
+using curumim_api.Application.Ports.Inbound.UseCases.Register;
 
-namespace curumim_api.Adapters.Inbound.Http.Endpoint
+namespace curumim_api.Adapters.Inbound.Http.Endpoint.Register
 {
     public static class EndpointRegisterBook
     {
