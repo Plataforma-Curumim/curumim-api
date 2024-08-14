@@ -1,5 +1,7 @@
-﻿using curumim_api.Application.Ports.Inbound.UseCases.Register;
-using curumim_api.Application.UseCase.Register;
+﻿using curumim_api.Application.Ports.Inbound.UseCases.Management.Book;
+using curumim_api.Application.Ports.Inbound.UseCases.Management.User;
+using curumim_api.Application.UseCase.Management.Book;
+using curumim_api.Application.UseCase.Management.User;
 
 namespace curumim_api.Infra.Configuration
 {
@@ -7,7 +9,7 @@ namespace curumim_api.Infra.Configuration
     {
         public static void AddUseCaseConfiguration(this IServiceCollection services)
         {
-            #region Register
+            #region Management
             services.AddScoped<IUseCaseRegisterBook, UseCaseRegisterBook>();
             services.AddScoped<IUseCaseRegisterUser, UseCaseRegisterUser>();
             #endregion

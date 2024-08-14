@@ -20,7 +20,11 @@
         "DATABASE_ADDRESS": "",
         "DATABASE_USERNAME": "",
         "DATABASE_NAME": "",
-        "DATABASE_PASSWORD": ""
+        "DATABASE_PASSWORD": "",
+        "PROCEDURE_REGISTER_USER": "",
+        "PROCEDURE_EDIT_USER": "",
+        "PROCEDURE_REGISTER_BOOK": "",
+        "PROCEDURE_EDIT_BOOK": ""
       },
       "publishAllPorts": true,
       "useSSL": false

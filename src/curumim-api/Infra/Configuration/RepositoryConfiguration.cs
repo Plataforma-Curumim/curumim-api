@@ -1,7 +1,7 @@
-﻿using curumim_api.Adapters.Outbound.SQL.Configuration;
-using curumim_api.Adapters.Outbound.SQL.Repository.Register;
+﻿using curumim_api.Adapters.Outbound.Sql.Repository;
+using curumim_api.Adapters.Outbound.SQL.Configuration;
 using curumim_api.Application.Ports.Outbound.SQL.Connection;
-using curumim_api.Application.Ports.Outbound.SQL.Repository.Register;
+using curumim_api.Application.Ports.Outbound.SQL.Repository;
 
 namespace curumim_api.Infra.Configuration
 {
@@ -10,11 +10,7 @@ namespace curumim_api.Infra.Configuration
         public static void AddRepositoryConfiguration(this IServiceCollection services)
         {
             services.AddSingleton<IConnectionSql, ConnectionSql>();
-
-            #region Register
-            services.AddScoped<IRepositoryRegisterBook, RepositoryRegisterBook>();
-            services.AddScoped<IRepositoryRegisterUser, RepositoryRegisterUser>();
-            #endregion
+            services.AddScoped<IRepositoryProcedure, RepositoryProcedure>();
         }
     }
 }

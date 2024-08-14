@@ -1,4 +1,5 @@
-﻿using curumim_api.Adapters.Inbound.Http.Endpoint.Register;
+﻿using curumim_api.Adapters.Inbound.Http.Endpoint.Management.Book;
+using curumim_api.Adapters.Inbound.Http.Endpoint.Management.User;
 
 namespace curumim_api.Infra.Configuration
 {
@@ -6,10 +7,11 @@ namespace curumim_api.Infra.Configuration
     {
         public static void UseEndpointConfiguration(this WebApplication app)
         {
-            #region Register
-            var registerGroup = app.MapGroup("api/register/");
-            registerGroup.AddEndpointRegisterBook();
-            registerGroup.AddEndpointRegisterUser();
+            #region Management
+            var managementGroup = app.MapGroup("api/management/");
+            managementGroup.AddEndpointRegisterBook();
+            managementGroup.AddEndpointRegisterUser();
+            managementGroup.AddEndpointEditUser();
             #endregion
         }
     }
