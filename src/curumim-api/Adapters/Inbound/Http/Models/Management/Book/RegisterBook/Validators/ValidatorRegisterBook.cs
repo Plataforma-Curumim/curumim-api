@@ -15,6 +15,12 @@ namespace curumim_api.Adapters.Inbound.Http.Models.Management.Book.RegisterBook.
             ErrorIf(m => m.publishers is null || !m.publishers.Any(), m => "Não pode ser nulo ou vazio", m => m.publishers);
             ErrorIf(m => m.numberOfPages is null || m.numberOfPages < 1, m => "Não pode ser nulo ou menor que 1", m => m.numberOfPages);
 
+            ErrorIf(m => m.root is null, m => "Não pode ser nulo ou vazio", m => m.root);
+            If(m => m.root is not null, @then: m =>
+            {
+                ErrorIf(m => m.root!.UserRootId is null, m => "Não pode ser vazio", m => m.root!.UserRootId);
+                ErrorIf(m => m.root!.libraryId is null, m => "Não pode ser vazio", m => m.root!.libraryId);
+            });
         }
     }
 }

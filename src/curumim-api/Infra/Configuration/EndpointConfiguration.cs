@@ -8,10 +8,11 @@ namespace curumim_api.Infra.Configuration
         public static void UseEndpointConfiguration(this WebApplication app)
         {
             #region Management
-            var managementGroup = app.MapGroup("api/management/");
+            var managementGroup = app.MapGroup("api/management/").WithTags("Gestão");
             managementGroup.AddEndpointRegisterBook();
             managementGroup.AddEndpointRegisterUser();
             managementGroup.AddEndpointEditUser();
+            managementGroup.AddEndpointEditBook();
             #endregion
         }
     }
