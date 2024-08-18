@@ -12,6 +12,8 @@ namespace curumim_api.Infra.Configuration
             #region Management
             services.AddScoped<IUseCaseRegisterBook, UseCaseRegisterBook>();
             services.AddScoped<IUseCaseRegisterUser, UseCaseRegisterUser>();
+            services.AddScoped<IUseCaseEditUser, UseCaseEditUser>();
+            services.AddScoped<IUseCaseEditBook, UseCaseEditBook>();
             #endregion
         }
     }

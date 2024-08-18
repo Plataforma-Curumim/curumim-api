@@ -16,7 +16,6 @@ namespace curumim_api.Adapters.Inbound.Http.Endpoint.Management.User
         public static void AddEndpointEditUser(this RouteGroupBuilder groupBuilder)
         {
             groupBuilder.MapPatch("/edit/user", EditUser)
-                        .WithTags("Edit User")
                         .AddEndpointFilter<ValidationFilter<RequestEditUser>>()
                         .Produces<ResponseEditUser>(201)
                         .Produces<BaseError>(422)

@@ -15,7 +15,6 @@ namespace curumim_api.Adapters.Inbound.Http.Endpoint.Management.Book
         public static void AddEndpointRegisterBook(this RouteGroupBuilder groupBuilder)
         {
             groupBuilder.MapPost("/register/book", RegisterBook)
-                        .WithTags("Register Book")
                         .AddEndpointFilter<ValidationFilter<RequestRegisterBook>>()
                         .Produces<ResponseRegisterBook>(201)
                         .Produces<BaseError>(422)

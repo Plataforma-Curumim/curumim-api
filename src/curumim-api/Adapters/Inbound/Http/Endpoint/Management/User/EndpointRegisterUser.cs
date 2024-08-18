@@ -15,7 +15,6 @@ namespace curumim_api.Adapters.Inbound.Http.Endpoint.Management.User
         public static void AddEndpointRegisterUser(this RouteGroupBuilder groupBuilder)
         {
             groupBuilder.MapPost("/register/user", RegisterUser)
-                        .WithTags("Register User")
                         .AddEndpointFilter<ValidationFilter<RequestRegisterUser>>()
                         .Produces<ResponseRegisterUser>(201)
                         .Produces<BaseError>(422)

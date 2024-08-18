@@ -1,11 +1,12 @@
 ﻿using curumim_api.Application.Core.DomainModels.Entities;
 using curumim_api.Application.Core.Enums;
 
-namespace curumim_api.Adapters.Inbound.Http.Models.Management.Book.RegisterBook
+namespace curumim_api.Adapters.Inbound.Http.Models.Management.Book.EditBook
 {
-    public record RequestRegisterBook
+    public record RequestEditBook
     {
-        public Root? root { get; set; }
+        public string? idBook { get; set; }
+        public EnumTypeEdit typeEdit { get; set; }
         public EnumStateBook state { get; set; }
         public string? rfidId { get; set; }
         public string? isbn { get; set; }
@@ -14,12 +15,8 @@ namespace curumim_api.Adapters.Inbound.Http.Models.Management.Book.RegisterBook
         public string? author { get; set; }
         public string? sinopse { get; set; }
         public string? gender { get; set; }
-        public string? language { get; set; }
         public string? urlImage { get; set; }
-        public List<string>? publishers { get; set; }
-        public string? publishDate { get; set; }
-        public string? physicalDimensions { get; set; }
-        public List<string>? publishPlaces { get; set; }
         public int? numberOfPages { get; set; }
+        public Root? root { get; set; }
     }
 }

@@ -7,6 +7,7 @@ namespace curumim_api.Adapters.Inbound.Http.Models.Management.User.EditUser
     {
         public string? userId { get; set; }
         public EnumTypeEdit typeEdit { get; set; }
+        public EnumTypeUser typeUser { get; set; }
         public string? name { get; set; }
         public string? email { get; set; }
         public string? username { get; set; }
