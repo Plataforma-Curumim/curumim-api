@@ -3,9 +3,9 @@ using System.Text.Json;
 
 namespace curumim_api.Adapters.Inbound.Http.Mappers.Shared
 {
-    public static class MapperShared<T>
+    public static class MapperShared<TObject>
     {
-        public static DomainModel MapToDomain(T obj, string idempotenceKey)
+        public static DomainModel MapToDomain(TObject obj, string idempotenceKey)
         {
             return new DomainModel
             {
