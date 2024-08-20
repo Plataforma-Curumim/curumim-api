@@ -31,8 +31,8 @@ namespace curumim_api.Application.UseCase.Management.Book
 
                 var msgOut = new ResponseEditBook
                 {
-                    modifiedAt = "2001/01/01 00:00:00Z",
-                    state = "ATIVO",
+                    modifiedAt =DateTime.Now.ToString(),
+                    state = EnumStateBook.AVAILABLE.ToString(),
                 };
                 domainModel.msgOUT = JsonSerializer.Serialize(msgOut);
 

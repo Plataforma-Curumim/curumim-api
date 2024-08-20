@@ -13,6 +13,8 @@ namespace curumim_api.Infra.Configuration
             managementGroup.AddEndpointRegisterUser();
             managementGroup.AddEndpointEditUser();
             managementGroup.AddEndpointEditBook();
+            managementGroup.AddEndpointGetBook();
+            managementGroup.AddEndpointGetUser();
             #endregion
         }
     }
