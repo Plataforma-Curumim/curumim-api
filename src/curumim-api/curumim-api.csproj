@@ -24,4 +24,20 @@
 
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Adapters\Inbound\Http\Endpoint\Transaction\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="Adapters\Inbound\Http\Endpoint\Transaction\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Adapters\Inbound\Http\Endpoint\Transaction\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Adapters\Inbound\Http\Endpoint\Transaction\**" />
+  </ItemGroup>
+
 </Project>
