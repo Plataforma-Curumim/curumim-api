@@ -22,10 +22,9 @@ namespace curumim_api.Adapters.Inbound.Http.Endpoint.Management.User
         }
 
         public static async Task<Results<Created<ResponseGetUser>, BadRequest<BaseError>>>
-            GetUser([FromServices] IUseCaseGetUser useCase,
-                                [FromQuery] string rfidId)
+            GetUser(            [FromServices] IUseCaseGetUser useCase,
+                                [FromBody] RequestGetUser request)
         {
-            var request = new RequestGetUser(rfidId);
             var mapper = MapperShared<RequestGetUser>.MapToDomain(request, "");
             var responseUseCase = useCase.Get(mapper);
 
