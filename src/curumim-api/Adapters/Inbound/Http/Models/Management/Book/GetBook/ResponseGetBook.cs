@@ -3,7 +3,7 @@
     public record ResponseGetBook
     {
         public string? state { get; set; }
-        public string? rfidId { get; set; }
+        public string? idBook { get; set; }
         public string? isbn { get; set; }
         public string? title { get; set; }
         public string? subtitle { get; set; }

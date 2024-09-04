@@ -36,7 +36,7 @@ namespace curumim_api.Application.UseCase.Management.User
                     dateOfBirth = "01/03/2004",
                     numberPhone = "91994109636",
                     address = "Rua São Cristovão",
-                    idRfid = Guid.NewGuid().ToString(),
+                    idUser = Guid.NewGuid().ToString(),
                     typeUser = EnumTypeUser.READER.ToString(),
 
                 };
