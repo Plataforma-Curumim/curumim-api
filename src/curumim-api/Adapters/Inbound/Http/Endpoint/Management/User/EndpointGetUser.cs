@@ -21,7 +21,7 @@ namespace curumim_api.Adapters.Inbound.Http.Endpoint.Management.User
 
         }
 
-        public static async Task<Results<Created<ResponseGetUser>, BadRequest<BaseError>>>
+        public static async Task<Results<Ok<ResponseGetUser>, BadRequest<BaseError>>>
             GetUser(            [FromServices] IUseCaseGetUser useCase,
                                 [FromBody] RequestGetUser request)
         {
@@ -31,7 +31,7 @@ namespace curumim_api.Adapters.Inbound.Http.Endpoint.Management.User
             if (responseUseCase.Status != EnumState.SUCCESS) return TypedResults.BadRequest(responseUseCase.ErrorObject!);
 
             var response = JsonSerializer.Deserialize<ResponseGetUser>(responseUseCase!.SucessObject!.msgOUT!);
-            return TypedResults.Created("", response);
+            return TypedResults.Ok(response);
         }
     }
 }

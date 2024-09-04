@@ -1,5 +1,6 @@
 ﻿using curumim_api.Adapters.Inbound.Http.Endpoint.Management.Book;
 using curumim_api.Adapters.Inbound.Http.Endpoint.Management.User;
+using curumim_api.Adapters.Inbound.Http.Endpoint.Transaction.Lend;
 
 namespace curumim_api.Infra.Configuration
 {
@@ -13,8 +14,13 @@ namespace curumim_api.Infra.Configuration
             managementGroup.AddEndpointRegisterUser();
             managementGroup.AddEndpointEditUser();
             managementGroup.AddEndpointEditBook();
-            managementGroup.AddEndpointGetBook();
             managementGroup.AddEndpointGetUser();
+            managementGroup.AddEndpointGetBook();
+            #endregion
+
+            #region Transaction
+            var transactionGroup = app.MapGroup("api/transaction/").WithTags("Transação");
+            transactionGroup.AddEndpointLend();
             #endregion
         }
     }
