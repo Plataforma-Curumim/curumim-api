@@ -23,7 +23,7 @@ namespace curumim_api.Adapters.Inbound.Http.Endpoint.Management.Book
 
         }
 
-        public static async Task<Results<Created<ResponseGetBook>, BadRequest<BaseError>>>
+        public static async Task<Results<Ok<ResponseGetBook>, BadRequest<BaseError>>>
             GetBook([FromServices] IUseCaseGetBook useCase,
                                 [FromQuery] string rfidId)
         {
@@ -34,7 +34,7 @@ namespace curumim_api.Adapters.Inbound.Http.Endpoint.Management.Book
             if (responseUseCase.Status != EnumState.SUCCESS) return TypedResults.BadRequest(responseUseCase.ErrorObject!);
 
             var response = JsonSerializer.Deserialize<ResponseGetBook>(responseUseCase!.SucessObject!.msgOUT!);
-            return TypedResults.Created("", response);
+            return TypedResults.Ok(response);
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using curumim_api.Application.Ports.Inbound.UseCases.Management.Book;
 using curumim_api.Application.Ports.Inbound.UseCases.Management.User;
+using curumim_api.Application.Ports.Inbound.UseCases.Transaction.Lend;
 using curumim_api.Application.UseCase.Management.Book;
 using curumim_api.Application.UseCase.Management.User;
+using curumim_api.Application.UseCase.Transaction.Lend;
 
 namespace curumim_api.Infra.Configuration
 {
@@ -14,8 +16,14 @@ namespace curumim_api.Infra.Configuration
             services.AddScoped<IUseCaseRegisterUser, UseCaseRegisterUser>();
             services.AddScoped<IUseCaseEditUser, UseCaseEditUser>();
             services.AddScoped<IUseCaseEditBook, UseCaseEditBook>();
-            services.AddScoped<IUseCaseGetBook, UseCaseGetBook>();
             services.AddScoped<IUseCaseGetUser, UseCaseGetUser>();
+            services.AddScoped<IUseCaseGetBook, UseCaseGetBook>();
+            #endregion
+
+            #region Transaction
+            services.AddScoped<IUseCaseLend, UseCaseLend>();
+
+
             #endregion
         }
     }
