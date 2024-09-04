@@ -1,9 +1,11 @@
 ﻿using curumim_api.Application.Ports.Inbound.UseCases.Management.Book;
 using curumim_api.Application.Ports.Inbound.UseCases.Management.User;
 using curumim_api.Application.Ports.Inbound.UseCases.Transaction.Lend;
+using curumim_api.Application.Ports.Inbound.UseCases.Transaction.Return;
 using curumim_api.Application.UseCase.Management.Book;
 using curumim_api.Application.UseCase.Management.User;
 using curumim_api.Application.UseCase.Transaction.Lend;
+using curumim_api.Application.UseCase.Transaction.Return;
 
 namespace curumim_api.Infra.Configuration
 {
@@ -22,8 +24,7 @@ namespace curumim_api.Infra.Configuration
 
             #region Transaction
             services.AddScoped<IUseCaseLend, UseCaseLend>();
-
-
+            services.AddScoped<IUseCaseReturn, UseCaseReturn>();
             #endregion
         }
     }

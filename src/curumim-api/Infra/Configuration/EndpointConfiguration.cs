@@ -1,6 +1,7 @@
 ﻿using curumim_api.Adapters.Inbound.Http.Endpoint.Management.Book;
 using curumim_api.Adapters.Inbound.Http.Endpoint.Management.User;
 using curumim_api.Adapters.Inbound.Http.Endpoint.Transaction.Lend;
+using curumim_api.Adapters.Inbound.Http.Endpoint.Transaction.Return;
 
 namespace curumim_api.Infra.Configuration
 {
@@ -21,6 +22,7 @@ namespace curumim_api.Infra.Configuration
             #region Transaction
             var transactionGroup = app.MapGroup("api/transaction/").WithTags("Transação");
             transactionGroup.AddEndpointLend();
+            transactionGroup.AddEndpointReturn();
             #endregion
         }
     }
