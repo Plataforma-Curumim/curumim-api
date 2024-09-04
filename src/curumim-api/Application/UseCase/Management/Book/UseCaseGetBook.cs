@@ -33,7 +33,7 @@ namespace curumim_api.Application.UseCase.Management.Book
                 var msgOut = new ResponseGetBook
                 {
                     state = EnumStateBook.AVAILABLE.ToString(),
-                    rfidId = Guid.NewGuid().ToString(),
+                    idBook = Guid.NewGuid().ToString(),
                     isbn = "978-8532523051",
                     title = "Harry Potter e a Pedra Filosofal: 1",
                     subtitle = null,

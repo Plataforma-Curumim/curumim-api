@@ -14,7 +14,7 @@ namespace curumim_api.Adapters.Inbound.Http.Endpoint.Management.User
         public static void AddEndpointGetUser(this RouteGroupBuilder groupBuilder)
         {
             groupBuilder.MapGet("/get/user", GetUser)
-                        .Produces<ResponseGetUser>(201)
+                        .Produces<ResponseGetUser>(200)
                         .Produces<BaseError>(422)
                         .Produces<BaseError>(500);
             //.RequireAuthorization();
@@ -23,9 +23,9 @@ namespace curumim_api.Adapters.Inbound.Http.Endpoint.Management.User
 
         public static async Task<Results<Created<ResponseGetUser>, BadRequest<BaseError>>>
             GetUser([FromServices] IUseCaseGetUser useCase,
-                                [FromQuery] string idUser)
+                                [FromQuery] string rfidId)
         {
-            var request = new RequestGetUser(idUser);
+            var request = new RequestGetUser(rfidId);
             var mapper = MapperShared<RequestGetUser>.MapToDomain(request, "");
             var responseUseCase = useCase.Get(mapper);
 

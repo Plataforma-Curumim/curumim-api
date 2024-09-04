@@ -16,7 +16,7 @@ namespace curumim_api.Adapters.Inbound.Http.Endpoint.Management.Book
         public static void AddEndpointGetBook(this RouteGroupBuilder groupBuilder)
         {
             groupBuilder.MapGet("/get/book", GetBook)
-                        .Produces<ResponseGetBook>(201)
+                        .Produces<ResponseGetBook>(200)
                         .Produces<BaseError>(422)
                         .Produces<BaseError>(500);
             //.RequireAuthorization();
@@ -25,9 +25,9 @@ namespace curumim_api.Adapters.Inbound.Http.Endpoint.Management.Book
 
         public static async Task<Results<Created<ResponseGetBook>, BadRequest<BaseError>>>
             GetBook([FromServices] IUseCaseGetBook useCase,
-                                [FromQuery] string idBook)
+                                [FromQuery] string rfidId)
         {
-            var request = new RequestGetBook(idBook);
+            var request = new RequestGetBook(rfidId);
             var mapper = MapperShared<RequestGetBook>.MapToDomain(request, "");
             var responseUseCase = useCase.Get(mapper);
 
