@@ -24,4 +24,8 @@
 
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Adapters\Inbound\Http\Models\Transaction\Lend\Validator.cs" />
+  </ItemGroup>
+
 </Project>
