@@ -1,0 +1,6 @@
+﻿services:
+  curumim-api:
+    image: curumim-api
+    build:
+      context: .
+      dockerfile: src/curumim-api/Dockerfile

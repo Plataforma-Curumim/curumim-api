@@ -1,0 +1,43 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  todosimpleapp-deploy:
+    name: Deploy | Docker-compose
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Copy curumim-api to VPS
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          port: ${{ secrets.REMOTE_PORT }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          # Github path
+          source: "**"
+          # VPS path
+          target: ${{secrets.TARGET_DIR}}
+
+      - name: Build and Start Docker-compose
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          port: ${{ secrets.REMOTE_PORT }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd ~/curumim-api
+            docker-compose build --no-cache app
+            docker-compose up -d app
